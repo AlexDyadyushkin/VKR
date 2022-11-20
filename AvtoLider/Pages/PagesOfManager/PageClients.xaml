@@ -1,0 +1,46 @@
+﻿<Page x:Class="AvtoLider.Pages.PagesOfManager.PageClients"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AvtoLider.Pages.PagesOfManager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Менеджер" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource tbNormal}" Text="Список клиентов" VerticalAlignment="Center" FontSize="25" Grid.Column="1" ></TextBlock>
+        <TextBlock Style="{StaticResource tbNormal}" Text="Поиск:" Grid.Row="1" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+        <TextBox Width="300" Grid.Row="1" Margin="100 0 0 0" MaxLength="50" Name="tbSearch" TextChanged="tbSearch_TextChanged">
+            <TextBox.ToolTip>
+                <TextBlock Text="Поиск по имени и фамилии"></TextBlock>
+            </TextBox.ToolTip>
+        </TextBox>
+        <DataGrid FontSize="15" Background="Transparent" Grid.Row="2" x:Name="dGridClients" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Электронная почта" Binding="{Binding Email}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding PhoneNumber}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Birthday, StringFormat=dd/MM/yyyy}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество конфигураций" Binding="{Binding CountConfigurations}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактироавть" Name="btnEdit" Click="btnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Grid.Row="3"  HorizontalAlignment="Left" Margin="10 0 0 0" Name="btnAdd" Click="btnAdd_Click"></Button>
+        <Button Content="Печать" Grid.Row="3"  HorizontalAlignment="Left" Margin="200 0 0 0" Name="btnPrint" Click="btnPrint_Click"></Button>
+        <Button Content="Удалить" VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Right" Margin="0 0 10 0" Name="btnDelete" Click="btnDelete_Click"></Button>
+    </Grid>
+</Page>

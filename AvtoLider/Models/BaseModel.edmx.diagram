@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf9d66f8137e4d41a99c9dfd78c58fbc" Name="Diagram1">
+        <EntityTypeShape EntityType="bdAvtoLiderModel.Cars" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.Clients" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.Configuration" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.LoginHistory" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.TypesOfCover" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.TypesOfRims" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.TypesOfSeatUpholstery" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.TypesOfSteeringWheelsUpholstery" Width="1.5" PointX="3" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.TypesOfTires" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.UserRoles" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAvtoLiderModel.Users" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_TypesOfCover" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_TypesOfRims" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_TypesOfSeatUpholstery" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_TypesOfSteeringWheels" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_TypesOfTires" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Configuration_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_LoginHistory_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAvtoLiderModel.FK_Users_UserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,49 @@
+﻿<Page x:Class="AvtoLider.Pages.PagesOfManager.PageConfiguration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AvtoLider.Pages.PagesOfManager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Менеджер" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource tbNormal}" Text="Составление конфигурации" VerticalAlignment="Center" FontSize="25" Grid.Column="1" ></TextBlock>
+        <TextBlock Style="{StaticResource tbNormal}" Text="Поиск:" Grid.Row="1" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+        <TextBox Width="300" Grid.Row="1" Margin="100 0 0 0" MaxLength="50" Name="tbSearch" TextChanged="tbSearch_TextChanged">
+            <TextBox.ToolTip >
+                <TextBlock Text="Поиск по названию марки и модели автомобиля, названию покрытия, дисков, шин, типа перетяжки руля или сидений"></TextBlock>
+            </TextBox.ToolTip>
+        </TextBox>
+        <DataGrid FontSize="15" Background="Transparent" Grid.Row="2" x:Name="dGridConf" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dGridConf_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Менеджер" Binding="{Binding Users.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Clients.FullName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Автомобиль" Binding="{Binding Cars.BrandModel}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Диски" Binding="{Binding TypesOfRims.Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Покрытие" Binding="{Binding TypesOfCover.Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Шины" Binding="{Binding TypesOfTires.Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип перетяжки руля" Binding="{Binding TypesOfSteeringWheelsUpholstery.Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип перетяжки сидений" Binding="{Binding TypesOfSeatUpholstery.Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Общая цена" Binding="{Binding FullPrice, StringFormat=C, ConverterCulture=ru}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактироавть" Name="btnEdit" Click="btnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Grid.Row="3" HorizontalAlignment="Left" Margin="10 0 0 0" Name="btnAdd" Click="btnAdd_Click"></Button>
+        <Button Content="Печать" Grid.Row="3"  HorizontalAlignment="Left" Margin="200 0 0 0" Name="btnPrint" Click="btnPrint_Click"></Button>
+        <Button Content="Удалить" VerticalAlignment="Center" Grid.Row="3" Margin="0 0 10 0" HorizontalAlignment="Right" Name="btnDelete" Click="btnDelete_Click"></Button>
+    </Grid>
+</Page>
